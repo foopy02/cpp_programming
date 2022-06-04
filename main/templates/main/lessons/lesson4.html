@@ -1,0 +1,71 @@
+{% extends 'main/lesson_base.html' %} {% load static %} {% block html_of_lesson %}
+	<div class="main-text">
+		<p>Шартты операторлар өте маңызды, себебі олар шарттың нәтижесіне байланысты әртүрлі кодты орындауға мүмкіндік береді. <strong>C++</strong> тілінде тексеруге мүмкіндік беретін үш құрылым бар.</p>
+<h2><br></h2>
+<h4>Егер - else құрастырыңыз</h4>
+<p><u>егер басқа болса</u> арқылы бір немесе бірнеше шарттарды тексеруге болады, егер олар сәтті тексерілсе, біреуі орындалады, әйтпесе екіншісі.</p>
+<p>
+<br>
+</p>
+<p>Мысалды қарастырайық:</p><pre class=" language-cpp"><code class="lang  language-cpp"><span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">,</span> b <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>a <span class="token operator">==</span> b<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// Если a будет равным b, тогда будет выполнен код</span>
+            <span class="token comment">// Здесь код что будет выполнен</span>
+            <span class="token comment">// Если все одна строка кода, то фигурные скобки {}</span>
+            <span class="token comment">// можно не ставить</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>a <span class="token operator">&lt;=</span> b<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// Если а будет меньшим или равным b</span>
+            <span class="token comment">// Если предыдущее условие не будет выполнено,</span>
+            <span class="token comment">// а здесь условие окажется верным,</span>
+            <span class="token comment">// то будет выполнен этот код</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            <span class="token comment">// Этот код сработает, если другие условия не будут выполнены</span>
+        <span class="token punctuation">}</span></code></pre>
+		<p>Құрылымды тек бір <code>if</code> шартымен жазуға болады немесе оған қалауыңызша көптеген кірістірілген <code>else if</code> шарттарын қосуға болады.</p>
+<p>
+<br>
+</p>
+<p>Әрбір шарттың ішінде жаңа өрнектерді сынайтын басқа if else конструкцияларын жаза аласыз.</p>
+<p>
+<br>
+</p>
+<p>Бір мәлімдемеде бірнеше шартты тексеру қажет болса, логикалық «және» немесе логикалық «немесе» қолдануға болады:</p><pre class=" language-cpp"><code class="lang  language-cpp"><span class="token keyword">if</span> <span class="token punctuation">(</span>a <span class="token operator">!=</span> b <span class="token operator">&amp;&amp;</span> a <span class="token operator">&gt;</span> b<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment">// Код будет выполнен, если и первое, и второе условие</span>
+            <span class="token comment">// окажутся верными</span>
+        <span class="token punctuation">}</span>
+        
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>a <span class="token operator">&lt;</span> b <span class="token operator">||</span> a <span class="token operator">==</span> b<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment">// Код будет выполнен, если или первое, или второе условие</span>
+            <span class="token comment">// окажется верным</span>
+        <span class="token punctuation">}</span></code></pre>
+        <h2><span style="color: rgb(99, 99, 99);">Үштік операция</span></h2>
+        <div>Бұл <code>if other</code> сөзінің стенографиялық түрі. Мынадай жазылған:</div><pre class=" language-cpp"><code class="lang  language-cpp"><span class="token keyword">int</span> x <span class="token operator">=</span> <span class="token number">90</span><span class="token punctuation">,</span> a <span class="token operator">=</span> <span class="token number">8</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> res <span class="token operator">=</span> x <span class="token operator">&lt;</span> a <span class="token operator">?</span> <span class="token punctuation">(</span>x <span class="token operator">+</span> a<span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token punctuation">(</span>x <span class="token operator">-</span> a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        cout <span class="token operator">&lt;&lt;</span> res <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span></code></pre>
+        <div>Тексеріңіз: егер “x” “a” мәнінен аз болса, олардың қосындысын <code>res</code> айнымалысына қойыңыз, әйтпесе – олардың айырмашылығы.&nbsp;</div>
+        <h2 style="color: rgb(99, 99, 99);">Ауыстыру</h2>
+        <p><code>жағдай</code> құрылымында мән сәйкестігі үшін бірнеше шарттарды тексеруге ыңғайлы пішім бар. Айнымалы құрылымға, тексерілетін нәрсеге, сондай-ақ тексеру орындалатын мәндерге жазылады.</p>
+		<p>
+			<br>
+		</p>
+		<p>Пример оператора:</p><pre class=" language-cpp"><code class="lang  language-cpp"><span class="token keyword">int</span> x <span class="token operator">=</span> <span class="token number">23</span><span class="token punctuation">;</span>
+        <span class="token keyword">switch</span> <span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// Проверяем переменную x</span>
+            <span class="token keyword">case</span> <span class="token number">1</span><span class="token operator">:</span> <span class="token comment">// Если переменная будет равна 1, то здесь сработает код</span>
+                <span class="token comment">// Может быть множество строк, а не только одна</span>
+                cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Переменная равна 1"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span> <span class="token comment">// Указываем конец для кода для этой проверки</span>
+            <span class="token keyword">case</span> <span class="token number">56</span><span class="token operator">:</span> <span class="token comment">// Если переменная будет равна 56, то здесь сработает код</span>
+                <span class="token comment">// Может быть множество строк, а не только одна</span>
+                cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Переменная равна 56"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span> <span class="token comment">// Указываем конец для кода для этой проверки</span>
+                <span class="token comment">// По аналогии таких проверок может быть множество</span>
+                <span class="token comment">// Также можно добавить проверку, которая сработает в случае</span>
+                <span class="token comment">// если все остальные проверки не сработают</span>
+            <span class="token keyword">default</span><span class="token operator">:</span>
+                cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Что-то другое"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span> <span class="token comment">// Можно и не ставить, так как это последние условие</span>
+        <span class="token punctuation">}</span></code></pre></div>
+        <div class="container d-flex align-items-center justify-content-center">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/zv2l8zipMWg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+        </div>
+	<!-- BUTTON -->
+	{% endblock %}

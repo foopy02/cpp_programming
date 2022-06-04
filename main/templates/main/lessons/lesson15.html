@@ -1,0 +1,47 @@
+{% extends 'main/lesson_base.html' %} {% load static %} {% block html_of_lesson %}
+	<div class="main-text">
+        <p><strong>Функцияларды</strong> қайталанатын кодты қоюға және қажет кезде оған сілтеме жасауға болатын шағын ішкі бағдарламалар деп атауға болады. Функциялар бағдарламаларды құруды әлдеқайда жеңілдетеді, өйткені бір типтегі кодты бірнеше рет көшірудің қажеті жоқ, бірақ біз жай ғана бір жалпы функцияны пайдалана аламыз.</p>
+        <div>
+        <br>
+        </div>
+        <p>Көптеген адамдар функциялар мен әдістерді шатастырады және олардың арасындағы айырмашылықты түсінбейді. Іс жүзінде ешқандай айырмашылықтар жоқ, өйткені әдістер де, функциялар да бірдей. Кластардан тыс жазылатын функциялар функциялар, ал сынып ішінде жазылатын функциялар әдістер деп аталады. C++ нысанға бағытталған тіл болмағандықтан, маңызды емес болса да, функцияларды айтқан дұрыс.</p>
+        <p>
+        <br>
+        </p>
+        <p>Жағдай айнымалылармен бірдей. Сыныптарда айнымалылар өрістер деп аталады, ал сыныптардан тыс олар айнымалылар деп аталады.</p>
+        <p>
+        <br>
+        </p>
+        <p>Функцияларды жасау үшін қайтарылатын деректер түрін көрсету керек, атауды және параметрлерді көрсету керек. Функция ештеңе қайтармаған жағдайда, деректер түрі <code>void</code> көрсетіледі.&nbsp;</p>
+        <p>
+        <br>
+        </p>
+        <p>Барлық функциялар <code>main()</code> функциясын жасамас бұрын жазылуы керек. Бұл жағдайда функцияларды шақыру кезінде сіз қателерді алмайсыз.</p>
+        <p>
+        <br>
+        </p>
+        <p>Сонымен қатар, функцияларды тек «негізгі» функцияның алдында жариялап, одан кейін жазуға болады.</p>
+        <p>
+        <br>
+        </p>
+        <h4>Функция құру</h4>
+		<div><span style="font-size: 1em;">Барлық деректер негізінде біздің функция келесідей болады:</span></div><pre class=" language-cpp"><code class="lang  language-cpp"><span class="token keyword">void</span> test <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Вывод чего-либо в консоль"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span></code></pre>
+		<div>Жоғарыдағы функция ешқандай параметр қабылдамайды және ештеңені қайтармайды. Ол жай ғана консольге бір сөз жазады. Функцияны әртараптандырып, параметрді қосамыз:</div><pre class=" language-cpp"><code class="lang  language-cpp"><span class="token keyword">void</span> test <span class="token punctuation">(</span><span class="token keyword">char</span> symbol<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        cout <span class="token operator">&lt;&lt;</span> symbol <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span></code></pre>
+		<div>Енді функция консольде көрсетілетін параметрді алады.</div>
+		<div>
+			<br>
+		</div>
+		<div>«main» функцияның алдында функция сипаттамасын жазу да қисынды болар еді:</div><pre class=" language-cpp"><code class="lang  language-cpp"><span class="token keyword">void</span> test <span class="token punctuation">(</span><span class="token keyword">char</span> symbol<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+		<div>Егер функция бір нәрсені қайтаруы керек болса, біз қайтарылатын деректер түрін белгілейміз. Деректерді қайтару үшін <code>return</code> кілт сөзін пайдаланыңыз:</div><pre class=" language-cpp"><code class="lang  language-cpp"><span class="token keyword">double</span> test <span class="token punctuation">(</span><span class="token keyword">double</span> some_number<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        some_number <span class="token operator">*</span><span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> some_number<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span></code></pre></div>
+    <div class="container d-flex align-items-center justify-content-center">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/yFywgECMn1k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+        </div>
+ {% endblock %}

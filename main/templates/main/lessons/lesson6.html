@@ -1,0 +1,36 @@
+{% extends 'main/lesson_base.html' %} {% load static %} {% block html_of_lesson %}
+	<div class="main-text">
+        <p><strong>C++</strong> тілінде, көптеген басқа тілдердегі сияқты, циклдердің 3 түрі бар. Олардың әрқайсысы бір рөлді орындайды, бірақ әртүрлі жазылады. Барлық үш циклды қарастырыңыз.</p>
+        <h2>Цикл for</h2>
+		<div>Цикл <code>for</code> барлық жағдайлар бір жерде жазылады, бұл көптеген жағдайларда өте ыңғайлы. Мұндай циклдің стандартты белгісі келесідей:</div><pre class=" language-cpp"><code class="lang  language-cpp"><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+        cout <span class="token operator">&lt;&lt;</span> i <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span></code></pre>
+		<p>Цикл мәлімдемесі мыналарды қамтиды: цикл айнымалысы, оның бастапқы мәні және оның ауқымы. Жоғарыдағы мысал 0-ден 10-ға дейінгі сандарды көрсетеді.</p>
+        <p>
+			<br>
+		</p>
+        <p>Егер цикл мәтінінде кодтың бір ғана жолы болса, онда бұйра жақшаларды өткізіп жіберуге және жазуға болмайды.</p>
+        <h2>While циклі</h2>
+        <div><code>while</code> циклінің мәні <code>for</code> циклінен онша ерекшеленбейді. Айырмашылық тек циклдің жазылуында. Әзірге сізге тек шарт жазу керек, ал қалған барлық параметрлер циклден тыс жазылады:</div><pre class=" language-cpp"><code class="lang language-cpp"><span class= "token keyword">int </span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class ="token comment">// Айнымалы мәнді жасаңыз</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;=</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// Здесь только условие</span>
+        cout <span class="token operator">&lt;&lt;</span> i <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+        i<span class="token operator">++</span><span class="token punctuation">;</span> <span class="token comment">// Увеличение переменной</span>
+    <span class="token punctuation">}</span></code></pre>
+    <h2>Do while циклі</h2>
+    <div>Цикл жазылуы жағынан <code>while</code> цикліне ұқсас, бірақ ол сәл басқаша жұмыс істейді. <strong>do..while</strong> циклі бір рет жүз пайыз орындалады, содан кейін ол шартты тексереді және ол шын болса, цикл жұмысын жалғастырады:</div><pre class=" language-cpp"><code class="lang  language-cpp"><span class="token keyword">int</span> x <span class="token operator">=</span> <span class="token number">13</span><span class="token punctuation">;</span>
+    <span class="token keyword">do</span> <span class="token punctuation">{</span>
+        x<span class="token operator">--</span><span class="token punctuation">;</span>
+        cout <span class="token operator">&lt;&lt;</span> i <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">while</span> <span class="token punctuation">(</span>x <span class="token operator">&gt;</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+    <div>Мысалдан көріп отырғаныңыздай, цикл бастапқыда дұрыс емес, бірақ бұл оның бір рет іске қосылуына кедергі жасамайды.</div>
+    <h2><span style="color: rgb(99, 99, 99);">Циклге арналған операторлар</span></h2>
+    <p>Циклдің екі негізгі операторы бар:</p>
+    <ul>
+    <li>Оператор <code>break</code> - циклдан толық шығу үшін қызмет етеді;</li>
+    <li><code>continue</code> операторы тек бір итерацияны өткізіп жібереді және циклден шықпайды.</li>
+    </ul>
+	</div>
+    <div class="container d-flex align-items-center justify-content-center">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/KwO8j4K26xY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+        </div>
+	 {% endblock %}

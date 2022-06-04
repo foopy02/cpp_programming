@@ -1,0 +1,62 @@
+{% extends 'main/lesson_base.html' %} {% load static %} {% block html_of_lesson %}
+
+	<div class="main-text">
+		<p>Кез келген <strong>C++</strong> бағдарламалары бірнеше қажетті құрамдастардан тұрады:&nbsp;</p>
+<ol>
+<li>Соның ішінде кітапханалар;</li>
+<li>Аттар кеңістігін көрсету;</li>
+<li><code>0</code> мәнін қайтаратын <code>main</code> функциясы.</li>
+</ol>
+<div>
+<br>
+</div>
+<h3>C++ тіліндегі кітапханалар </h3>
+<p>Кітапханалар қолданбаға қосымша функцияларды қосу үшін қажет. Стандартты кітапханалардың көмегімен келесі мүмкіндіктерді қосуға болады:&nbsp;</p>
+<ul>
+<li>
+<div>ақпаратты экранда көрсету;</div>
+</li>
+<li>
+<div>пайдаланушыдан деректерді алу;</div>
+</li>
+<li>
+<div>айнымалылар жасау.</div>
+</li>
+</ul>
+<p>
+<br>
+</p>
+		<p>Болашақта сіз файлдармен, ағындармен, суреттермен және басқалармен жұмыс істеуге мүмкіндік беретін басқа кітапханаларды қосасыз. Барлық кітапханалар жоғарғы жағына қосылып, келесідей көрінеді:</p><pre class=" language-cpp"><code class="lang  language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream&gt;</span> </span><span class="token comment">// Стандартная библиотека</span>
+		<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;string&gt;</span> </span><span class="token comment">// Служит для работы со строками</span>
+		<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;fstream&gt;</span> </span><span class="token comment">// Служит для работы с файлами</span></code></pre>
+		<div>Әртүрлі операциялық жүйелерде қосылған кітапханалардың саны әртүрлі болуы мүмкін.</div>
+		<div>
+			<br>
+		</div>
+		<h3>Аттар кеңістігі</h3>
+		<div>C++ бағдарламаларында аттар кеңістігін де көрсету әдеттегідей. Бұл кодты қысқартуға және функцияларды қай кеңістіктен таңдайтынымызды жазбауға мүмкіндік береді.&nbsp;</div><pre class=" language-cpp"><code class="lang  language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream&gt;</span></span>
+		<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span> <span class="token comment">// Указываем пространство имен std</span>
+		
+		<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token comment">// Можем прописать просто метод cout</span>
+			<span class="token comment">// Без указания пространства имен</span>
+			<span class="token comment">// необходимо было бы писать std::cout</span>
+			cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Hello World"</span><span class="token punctuation">;</span>
+		 
+			cin<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span> 
+		<span class="token punctuation">}</span></code></pre>
+		<div>
+			<br>
+		</div>
+		<h3>C++ бағдарламасының өзі</h3>
+		<p>Әр C++ бағдарламасы <code>main</code> функциясынан басталады, сондықтан бұл функция кез келген бағдарламада болуы керек. Функция әрқашан 0 мәнін қайтарады, ол бағдарламаның дұрыс орындалғанын және тоқтатылғанын көрсетеді.&nbsp;</p>
+		<p>
+			<br>
+		</p>
+		<p>Консоль терезесінің бірден жабылуын болдырмау үшін бағдарламаның соңына пайдаланушыдан енгізуді күтетін <code>cin.get();</code> қосуға болады. Сіз сондай-ақ <code>system("pause");</code> пәрменін жаза аласыз, бірақ оны пайдалану үшін <code>#include &lt;cstdlib&gt;﻿</code> кітапханасын да қамтуыңыз керек.</p >
+	</div>
+	<div class="container d-flex align-items-center justify-content-center">
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/_6v6K9xQhvw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+	{% endblock %}

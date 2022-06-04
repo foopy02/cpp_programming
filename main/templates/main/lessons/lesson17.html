@@ -1,0 +1,24 @@
+{% extends 'main/lesson_base.html' %} {% load static %} {% block html_of_lesson %}
+	<div class="main-text">
+        <p>C++ жүйесінде көптеген кірістірілген математикалық функцияларды пайдалануға мүмкіндік беретін <code>cmath</code> кітапханасы бар.</p>
+        <p>
+        <br>
+        </p>
+        <p>Кітапхана қосылғаннан кейін синус, косинус, квадрат түбір және т.б. алу үшін функцияларды пайдалануға болады.</p>
+        <div>
+        <br>
+        </div>
+        <div>Күрделі есептеулерден басқа <strong>C++</strong> барлық математикалық операцияларды орындай алады. Бұл мына сияқты операциялар:</div>
+        <ul>
+        <li>алу - <code>z = y - x</code>;</li>
+        <li>қосымша - <code>z = y + x</code>;</li>
+        <li>көбейту - <code>z = y * x</code>;</li>
+        <li>бөлу - <code>z = y / x</code> (нөлге бөлуге болмайды);</li>
+        <li>бөлінгеннен кейінгі қалдық - <code>z = y % x</code>;</li>
+        </ul>
+		<p>Егер операция бір айнымалыда орындалса, жазбаны қысқартуға болады:</p><pre class=" language-java"><code class="lang  language-java">z <span class="token operator">=</span> z <span class="token operator">+</span> <span class="token number">20</span><span class="token punctuation">;</span>
+        z <span class="token operator">+=</span> <span class="token number">20</span><span class="token punctuation">;</span> <span class="token comment">// Эта запись аналогична той, что находиться выше</span></code></pre>
+		<p>Санды 1-ге көбейту немесе азайту керек болса, сәйкесінше ++ және -- жаза аламыз:</p><pre class=" language-java"><code class="lang  language-java">z <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+        z <span class="token operator">+=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        z<span class="token operator">++</span><span class="token punctuation">;</span> <span class="token comment">// Аналогично тому, что прописано выше</span></code></pre></div>
+	 {% endblock %}

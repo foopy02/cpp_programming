@@ -1,0 +1,18 @@
+{% extends 'main/lesson_base.html' %} {% load static %} {% block html_of_lesson %}
+	<div class="main-text">
+        <p><code>this</code> көрсеткішінің көмегімен деректердің қайдан келетінін дәл анықтай аламыз. Бір кластағы деректермен жұмыс істеу кезінде көбінесе сыныптың өрістеріне немесе әдістеріне сілтеме жасау қажет. Атаулардың қайшылықтарын болдырмау үшін "осы" параметрін көрсетіңіз.</p>
+        <p>
+        <br>
+        </p>
+        <p>Жұмыс мысалы:</p><pre class=" language-cpp"><code class="lang  language-cpp"><span class="token keyword">class</span> <span class="token class-name">Some</span> <span class="token punctuation">{</span>
+        <span class="token keyword">private</span>
+            <span class="token keyword">int</span> test<span class="token punctuation">;</span>
+        
+        <span class="token keyword">public</span><span class="token operator">:</span>
+            <span class="token keyword">void</span> set <span class="token punctuation">(</span><span class="token keyword">int</span> test<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">this</span><span class="token operator">-</span><span class="token operator">&gt;</span>test <span class="token operator">=</span> test<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+		<p>Меңзерді пайдаланған кезде бұл код қателерді тудырмайды және бәрі дұрыс өңделеді.</p>
+	</div>
+	 {% endblock %}

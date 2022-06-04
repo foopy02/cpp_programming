@@ -1,0 +1,42 @@
+{% extends 'main/lesson_base.html' %} {% load static %} {% block html_of_lesson %}
+	<div class="main-text">
+        <p>Массивтер ақпараттың үлкен көлемін бір жерде сақтауға мүмкіндік береді. <strong>C++</strong> тілінде массивтердің бірнеше негізгі түрлері бар.&nbsp;</p>
+        <h4>Бір өлшемді массив</h4>
+        <p>Массивті құру үшін деректер түрін көрсетіп, атын жазып, тік жақшаларды қою керек. Бұл кәдімгі айнымалы мәндерді жасауға өте ұқсас, бірақ бұл жерде атаудан кейін төртбұрышты жақшалар бар.</p>
+        <p>
+        <br>
+        </p>
+        <p>Массивтер 0-ден басталады, сондықтан индекстегі бірінші элемент - 0, екіншісі - 1 және т.б.</p>
+        <p>
+        <br>
+        </p>
+        <p>Массив құру мысалдары:</p>
+		<div><pre class=" language-csharp"><code class="lang  language-csharp"><span class="token keyword">char</span> stroka<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// Создание пустого массива</span>
+        <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> numbers<span class="token punctuation">;</span> <span class="token comment">// Будет считаться ошибкой</span>
+        
+        <span class="token keyword">int</span> nums<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        nums<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment">// Добавление элементов в массив из 4 элементов</span>
+        
+        <span class="token keyword">int</span> nums2<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">5</span> <span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token comment">// Присвоение всех значений сразу</span></code></pre>
+        <p>Айнымалылар сияқты массив элементтерімен жұмыс істеуге болады. Біз оларды көрсете аламыз немесе олар үшін жаңа мәндер орната аламыз.</p>
+        <h4>Көпөлшемді массив</h4>
+        <p>Көпөлшемді массив - әрбір элементі басқа массив болатын массив. Тәжірибеде ұя салудың үшінші деңгейінен жоғары массивтер сирек пайдаланылады. Яғни, барлық элементтері басқа массивтер және барлық элементтері басқа массивтер болып табылатын массивтер іс жүзінде өте сирек кездеседі.</p>
+        <p>
+        <br>
+        </p>
+        <p>Біз мұндай массивтерді зерттемейміз, өйткені олардың құрылу принципі екі өлшемді массивтермен жұмыс істегендегімен бірдей.</p>
+        <p>
+        <br>
+        </p>
+        <p>Екі өлшемді массивтерді жасау үшін атаудан кейін қос шаршы жақшаларды пайдалану керек. Мұндай массив матрицаға ұқсайды және келесідей жазылады:</p><pre class=" language-cpp"><code class="lang  language-cpp"><span class="token keyword">int</span> x<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token punctuation">{</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">34</span><span class="token punctuation">,</span> <span class="token number">2</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+        cout <span class="token operator">&lt;&lt;</span> x<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// Выведет 34</span>
+        
+        <span class="token comment">// Можно их сразу не присваивать</span>
+        <span class="token keyword">char</span> symbols<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        symbols <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'A'</span><span class="token punctuation">;</span></code></pre>
+		<p>Бірінші массивтің элементтері басқа массивтер екенін көреміз. Кез келген нысанды таңдау үшін бір өлшемді массивтермен бірдей құрылымды пайдаланыңыз, тек енді бірінші массивтің де, екіншісінің де индексін көрсетіңіз:</p><pre class=" language-cpp"><code class="lang  language-cpp">x<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment">// Вместо 34 теперь будет 1</span></code></pre></div>
+	</div>
+    <div class="container d-flex align-items-center justify-content-center">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/SETbWm_IYDI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+	 {% endblock %}

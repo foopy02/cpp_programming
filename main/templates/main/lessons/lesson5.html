@@ -1,0 +1,30 @@
+{% extends 'main/lesson_base.html' %} {% load static %} {% block html_of_lesson %}
+	<div class="main-text">
+        <h4>Кездейсоқ сандар</h4>
+        <p>Кездейсоқ сандарды жасау үшін <code>rand()</code> әдісін пайдалану керек. 1 мен 20 арасындағы кездейсоқ санды жасау үшін сізге келесі код қажет:</p><pre class=" language-cpp"><code class="lang language-cpp"><span class="token keyword"> int</span> num <span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">+</span> <span class= "token function">rand</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">% </ span> <span class="token number">20</span><span class="token punctuation">;</span></code></pre>
+        <p>Бұл кодты пайдаланған кезде нөмір кездейсоқ жасалады, бірақ әрқашан бірдей болады. Бағдарлама іске қосылған сайын жаңа кездейсоқ санды көрсету үшін сіз кітапхананы пайдалануыңыз керек: <code>#include &lt;time.h&gt;</code>. Оны негізгі функцияға қосқаннан кейін келесі пәрменді жазыңыз: <code>srand(time(NULL));﻿</code>.</p>
+        <p>
+        <br>
+        </p>
+		<p>Орындау мысалы:</p><pre class=" language-cpp"><code class="lang  language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream&gt;</span></span>
+        <span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;time.h&gt;</span></span>
+        <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span> 
+        
+        <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token function">setlocale</span><span class="token punctuation">(</span>LC_ALL<span class="token punctuation">,</span> <span class="token string">"Russian"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Русская локализация консоли</span>
+            <span class="token function">srand</span><span class="token punctuation">(</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Генерирует случайное число, используя текущую дату как параметр</span>
+            cout <span class="token operator">&lt;&lt;</span> <span class="token number">1</span> <span class="token operator">+</span> <span class="token function">rand</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">20</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+            cout <span class="token operator">&lt;&lt;</span> <span class="token number">1</span> <span class="token operator">+</span> <span class="token function">rand</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">20</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+         
+            cin<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span> 
+        <span class="token punctuation">}</span></code></pre>
+		<h4>Жол функциялары</h4>
+<p>Жолдармен жұмыс істеу үшін сізге <code>#include &lt;string&gt;</code> кітапханасын қосу керек.&nbsp;</p>
+<p>
+<br>
+</p>
+<p>Пайдаланушыдан толық жолды алу үшін "getline(cin, value)" функциясын пайдаланыңыз. Функцияда <code>value</code> параметрі пайдаланушының мәні жазылатын айнымалының аты болып табылады.</p>
+	</div>
+
+	 {% endblock %}

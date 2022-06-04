@@ -1,0 +1,35 @@
+{% extends 'main/lesson_base.html' %} {% load static %} {% block html_of_lesson %}
+	<div class="main-text">
+        <p>Әр айнымалы немесе нысан деректерді компьютер жадындағы белгілі бір жерде сақтайды. Біз жаңа айнымалыны жасаған сайын жадта оның жаңа мәні бар жаңа орынды жасаймыз. Неғұрлым ұяшықтар көп болса, соғұрлым компьютер жады көбірек болады.</p>
+        <div>
+        <br>
+        </div>
+        <p>Компьютер жадындағы мекенжай - бұл біз қол жеткізе алатын сан. <strong>Меңзер</strong> - айнымалы мәнді және нәтижесінде оның мәнін алатын жадтағы бірдей мекенжай.</p>
+        <p>
+        <br>
+        </p>
+		<p>Көрсеткіштермен жұмыс істеу үшін екі арнайы таңбаны пайдалану керек:<code>&amp;</code> и <code>*</code>. Пример использования:</p><pre class=" language-cpp"><code class="lang  language-cpp"><span class="token keyword">int</span> t <span class="token operator">=</span> <span class="token number">237</span><span class="token punctuation">;</span> <span class="token comment">// Простая переменная</span>
+        <span class="token keyword">int</span> <span class="token operator">*</span>p<span class="token punctuation">;</span> <span class="token comment">// Создание указателя, который принимает лишь адрес другой переменной</span>
+        p <span class="token operator">=</span> <span class="token operator">&amp;</span>t<span class="token punctuation">;</span> <span class="token comment">// Устанавливаем адрес нашей первой переменной</span></code></pre>
+		<p>Переменные <code>t</code> и <code>p</code> будут равны числу 237, так как оба ссылаются на одну ячейку. Сам же компьютер на вычислении обеих переменных потратит меньше усилий, ведь обе переменные ссылаются на одно и то же.</p>
+		<p>
+			<br>
+		</p>
+        <h4>C++ тіліндегі сілтемелер </h4>
+        <p>Сілтемелер мен көрсеткіштер ұқсас, себебі екеуінде де мән ретінде тек нысанның мекенжайы болады.</p>
+		<p>
+			<br>
+		</p>
+        
+		<p>Көрсеткіш ұяшықтың мекенжайын сақтайды және егер біз осы ұяшықтың мәнін өзгерткіміз келсе, онда біз «бағыттау» операциясын орындауымыз керек:</p><pre class=" language-cpp"><code class="lang  language-cpp"><span class="token keyword">float</span> some <span class="token operator">=</span> <span class="token number">391</span><span class="token punctuation">;</span> <span class="token comment">// Простая переменная</span>
+        <span class="token keyword">float</span> <span class="token operator">*</span>u <span class="token operator">=</span> <span class="token operator">&amp;</span>some<span class="token punctuation">;</span> <span class="token comment">// Указатель на переменную</span>
+        <span class="token operator">*</span>u <span class="token operator">=</span> <span class="token number">98</span><span class="token punctuation">;</span> <span class="token comment">// Изменение значения переменной</span></code></pre>
+		<p>Сілтемелерде мұндай ұғым жоқ, өйткені сілтемені өзгерту арқылы сіз айнымалыны да автоматты түрде өзгертесіз. Сілтемелер айнымалыға тікелей қатысты, сондықтан олардың синтаксисі қарапайым:</p><pre class=" language-cpp"><code class="lang  language-cpp"><span class="token keyword">char</span> symbol <span class="token operator">=</span> <span class="token string">'A'</span><span class="token punctuation">;</span> <span class="token comment">// Простая переменная</span>
+        <span class="token keyword">char</span> <span class="token operator">&amp;</span>ref <span class="token operator">=</span> symbol<span class="token punctuation">;</span> <span class="token comment">// Создание ссылки на переменную</span>
+        <span class="token comment">// Поскольку мы ссылаемся на переменную, то можем её использовать</span>
+        <span class="token comment">// как отдельно взятую переменную</span>
+        cout <span class="token operator">&lt;&lt;</span> ref <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span> <span class="token comment">// Вывод символа "А"</span>
+        ref <span class="token operator">=</span> <span class="token string">'C'</span><span class="token punctuation">;</span> <span class="token comment">// Изменение на символ "C"</span></code></pre>
+		<p>Функцияларға немесе объектілерге деректерді беру кезінде сілтемелер мен көрсеткіштерді пайдалану негізделген. Сондай-ақ, бұл технологиялар бағдарлама барысында деректердің үлкен көлемін тасымалдауға өте ыңғайлы.</p>
+	</div>
+ {% endblock %}

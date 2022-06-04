@@ -1,0 +1,23 @@
+{% extends 'main/lesson_base.html' %} {% load static %} {% block html_of_lesson %}
+	<div class="main-text">
+        <p>Сынып үлгілері функция үлгілері сияқты жұмыс істейді. Айырмашылығы мынада: сынып үлгілері функцияларды емес, сыныптың үлгі құрылымын сипаттайды.</p>
+        <p>
+        <br>
+        </p>
+        <p>Сынып үлгісін жасау үшін <code>template</code> кілт сөзін пайдаланыңыз. Үлгі класын іске асыру мысалы:</p><pre class=" language-cpp"><code class="lang  language-cpp"><span class="token keyword">template</span> <span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token class-name">SomeType</span><span class="token operator">&gt;</span>
+        <span class="token keyword">class</span> <span class="token class-name">Test</span> <span class="token punctuation">{</span>
+        <span class="token keyword">private</span><span class="token operator">:</span>
+            SomeType value<span class="token punctuation">;</span>
+        <span class="token keyword">public</span><span class="token operator">:</span> 
+            SomeType <span class="token function">setElement</span><span class="token punctuation">(</span>SomeType value<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">this</span><span class="token operator">-</span><span class="token operator">&gt;</span>value <span class="token operator">=</span> value<span class="token punctuation">;</span>
+                <span class="token keyword">return</span> value<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+        <div>Үлгі класына негізделген нысанды жасау кезінде мәндерді ғана емес, сонымен қатар деректер түрін де беру керек.</div>
+		<div>
+			<br>
+		</div>
+		<div>Объектіні құру мысалы:</div><pre class=" language-cpp"><code class="lang  language-cpp">Test<span class="token operator">&lt;</span><span class="token keyword">float</span><span class="token operator">&gt;</span> newObject<span class="token punctuation">;</span>
+        newObject<span class="token punctuation">.</span><span class="token function">setElement</span><span class="token punctuation">(</span><span class="token number">2.6</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+	{% endblock %}

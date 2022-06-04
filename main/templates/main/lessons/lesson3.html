@@ -1,0 +1,49 @@
+{% extends 'main/lesson_base.html' %} {% load static %} {% block html_of_lesson %}
+	<div class="main-text">
+        <p>Айнымалылар өте маңызды, себебі олар ақпаратты сақтауға және кейінірек пайдалануға мүмкіндік береді. Бастапқыда айнымалыға неліктен бірдеңе жазу керектігі анық болмауы мүмкін, егер сіз оларсыз жай ғана мәндермен жұмыс істей алсаңыз. Айнымалылар туралы түсінік сәл кейінірек, күрделірек бағдарламалар жасауды бастағанда және ақпаратты бір жерде сақтау қажет болғанда келеді.</p>
+        <p>
+        <br>
+        </p>
+        <p><strong>C++</strong> тіліндегі айнымалы түрлері айнымалы атының алдында көрсетілген. Айнымалының мазмұны нақты деректер түріне байланысты болады. Егер бүтін сандарға арналған деректер түрі бар айнымалы мән <code>int</code> екенін көрсетсек, оған жолды немесе нүктесі бар санды жаза алмаймыз.</p>
+        <p>
+        <br>
+        </p>
+		<p>В ходе программы мы можем записывать новые значения в переменную, но тип данных должен оставаться неизменным:</p><pre class=" language-cpp"><code class="lang  language-cpp"><span class="token keyword">float</span> some_value <span class="token operator">=</span> <span class="token number">2.95</span><span class="token punctuation">;</span>
+        some_value <span class="token operator">=</span> <span class="token number">6.9</span><span class="token punctuation">;</span> <span class="token comment">// Записали новое значение</span></code></pre>
+		<div>Айнымалы мәндерді құруға арналған барлық деректер түрлерін қарастырайық.</div>
+		<h2><span style="color: rgb(99, 99, 99);">Бүтін сандар</span></h2>
+		<div>
+			<ul>
+<li style="line-height: 1.8;"><code>short int</code> - бүтін сандарды сақтауға арналған. -32768-ден 32767-ге дейінгі сандар диапазоны;</li>
+<li style="line-height: 1.8;"><code>unsigned short int</code> - оң бүтін сандарды сақтауға арналған. 0-ден 65535-ке дейінгі сандар диапазоны;</li>
+<li style="line-height: 1.8;"><code>int</code> - бүтін сандарды сақтауға арналған. Сан диапазоны -2 147 483 648 мен 2 147 483 647;</li>
+<li style="line-height: 1.8;"><code>unsigned int</code> - оң бүтін сандарды сақтауға арналған. 0-ден 4-ке дейінгі сандар диапазоны 294 967 295;</li>
+<li style="line-height: 1.8;"><code>long int</code> - бүтін сандарды сақтауға арналған. Сандар -9 223 372 036 854 775 808 мен 9 223 372 036 854 775 807;</li>
+<li style="line-height: 1.8;"><code>unsigned long int</code> - оң бүтін сандарды сақтауға арналған. Сандар диапазоны 0-ден 18-ге дейін 446 744 073 709 551 615.</li>
+</ul>
+<p>Түрлер арасындағы айырмашылық тек айнымалыда сақтауға болатын сандар ауқымында. Сондай-ақ, егер сан аз болса, <u>long int</u> сияқты үлкен деректер түрлерін пайдаланбаңыз, себебі ауқым неғұрлым үлкен болса, белгілі бір айнымалы үшін компьютерге көбірек жад қажет.</p>
+		</div>
+		<h2><span style="color: rgb(99, 99, 99);">нүктелік сандар</span></h2>
+<div>
+<ul>
+<li style="line-height: 1.8;"><code>float</code> - өзгермелі нүкте сандарын құру. Сан диапазоны -3,4*10<sup>38</sup> және 3,4*10<sup>38</sup>;</li>
+<li style="line-height: 1.8;"><code>double</code> немесе өзгермелі нүкте сандарын жасау үшін <code>long float</code>. Сандар ±4,9*10<sup>-324</sup> және ±1,8*10<sup>308</sup> аралығында болады.</li>
+</ul>
+<h2><span style="color: rgb(99, 99, 99);">Басқа деректер түрлері</span></h2></div>
+<div>
+			<ul>
+<li style="line-height: 1.8;"><code>bool</code> - логикалық деректер түрі. Шын (ақиқат) немесе жалған (жалған) мәнді жазуға арналған;</li>
+<li style="line-height: 1.8;"><code>char</code> - символдармен жұмыс істеуге арналған деректер түрі. Кез келген таңбаны жалғыз тырнақшаға қоюға мүмкіндік береді.</li>
+</ul>
+</div>
+<div>Айнымалыны жасау үшін деректер түрін көрсетіп, оны атау керек. Оған бірден мән қосуға болады:</div><pre class=" language-cpp"><code class="lang  language-cpp"><span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment">// Добавление значения сразу</span>
+        <span class="token keyword">float</span> c<span class="token punctuation">;</span> <span class="token comment">// Создание переменной без значения</span>
+        <span class="token keyword">short</span> <span class="token keyword">int</span> b<span class="token punctuation">,</span> y <span class="token operator">=</span> <span class="token number">342</span><span class="token punctuation">;</span> <span class="token comment">// Создание нескольких переменных</span></code></pre>
+        <div>Айнымалыны шақыру үшін оған оның аты бойынша сілтеме жасауға болады.</div>
+        <h2>Деректерді алу</h2>
+        <div>Пайдаланушыдан деректерді алу үшін пәрменді пайдалану керек <code>cin</code>:</div><pre class=" language-cpp"><code class="lang  language-cpp">cin <span class="token operator">&gt;&gt;</span> some_value<span class="token punctuation">;</span></code></pre>
+        <div>Осылайша, пайдаланушы енгізген деректер "кейбір_мән" деп аталатын айнымалыға орналастырылады.</div>	</div>
+        <div class="container d-flex align-items-center justify-content-center">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/-PXEPm2P624" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+	 {% endblock %}

@@ -1,0 +1,96 @@
+{% extends 'main/lesson_base.html' %} {% load static %} {% block html_of_lesson %}
+    <div class="main text">
+        <p>Көптеген бағдарламалау тілдері жоба файлдарымен және каталогтармен жұмыс істеуге арналған сабақтарды ұсынады. <strong>C++</strong> тілінде файлдардан деректерді жазуға және оқуға арналған көптеген сыныптар бар.</p>
+        <p>
+        <br>
+        </p>
+        <h4>Файлдармен жұмыс</h4>
+        <p>Файлдармен жұмыс істегенде екі нәрсені есте ұстаған жөн:</p>
+        <ol>
+        <li>Файлмен жұмыс істеуді бастамас бұрын оны ашу керек;</li>
+        <li>Файлмен жұмыс істеп болғаннан кейін оны жабу керек.</li>
+        </ol>
+        <p>
+        <br>
+        </p>
+        <p>Файл ашық болмаса немесе дұрыс ашылмаған болса, оның мазмұнымен толық жұмыс істей алмайсыз.&nbsp;</p>
+        <p>
+        <br>
+        </p>
+        <p>Жабу оңайырақ, бірақ сонымен бірге қиынырақ. Егер сіз файлды жаппасаңыз, бағдарлама дұрыс жұмыс істейді, алайда ашық файлдар неғұрлым көп болса, бағдарлама соғұрлым шамадан тыс жүктеледі және белгілі бір уақытта ол жай ғана ілініп қалады немесе өшеді.</p>
+        <p>
+        <br>
+        </p>
+        <h4>Ерекшеліктер мен файлдар</h4>
+        <p>Файл жобада немесе пайдаланушының компьютерінде болатыны әрқашан белгісіз болғандықтан, файлдарды ерекше жағдайларды пайдалану арқылы ашқан дұрыс. Файлдарды <code>try catch</code> блогында ашыңыз, осылайша сіз өзіңізді кез келген күтпеген жағдайлардан қорғайсыз.</p>
+        <p>
+        <br>
+        </p>
+        <h4>Деректерді файлға жазу</h4>
+        <p>Файлға деректерді жазғанда алдымен оны ашу керек. Ол үшін C++ тілі <code>ofstream</code> класын пайдаланады:</p><pre class=" language-cpp"><code class="lang  language-cpp"><span class="token comment">// Создание/открытие файла "examples.txt"</span>
+        ofstream <span class="token function">itproger_file</span><span class="token punctuation">(</span><span class="token string">"examples.txt"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// Можно было использовать метод open</span>
+        <span class="token comment">// ofstream itproger_file;</span>
+        <span class="token comment">// itproger_file.open("examples.txt");</span>
+        <span class="token comment">// но первая запись короче, поэтому стоит использовать её</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>itproger_file<span class="token punctuation">.</span><span class="token function">is_open</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// Проверяем открыт ли файл</span>
+            itproger_file <span class="token operator">&lt;&lt;</span> <span class="token string">"Simple text"</span><span class="token punctuation">;</span> <span class="token comment">// Записываем текст в файл</span>
+            itproger_file<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Всегда необходимо закрывать файл</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token comment">// Если файл не удалось открыть, тогда выдаем ошибку</span>
+            cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Error!"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span></code></pre>
+            <p>Осылайша біз файлды ашып, оған кез келген ақпаратты сала аламыз.</p>
+            <p>
+            <br>
+            </p>
+            <div>Файлды ашқан кезде ашу режимін көрсетуге болады. Бірнеше режимдер бар және олардың барлығы төмендегі фотода берілген:</div>
+            <div>
+            <br>
+            </div>
+		<div style="text-align: center;"><img src="/img/courses/cpp_files_open.png" style="width: 572px;">
+			<br>
+		</div>
+		<div>
+			<br>
+		</div>
+		<div>Файлды ашу кезінде режим екінші параметр ретінде көрсетілуі керек:</div><pre class=" language-cpp"><code class="lang  language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream&gt;</span></span>
+        <span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;fstream&gt;</span></span>
+        
+        <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span> 
+        
+        <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment">// Открываем файл для записи в него текста</span>
+            ofstream <span class="token function">file</span><span class="token punctuation">(</span><span class="token string">"test.txt"</span><span class="token punctuation">,</span> ios_base<span class="token operator">::</span>out<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>file<span class="token punctuation">.</span><span class="token function">is_open</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// Проверяем открыт ли сам файл</span>
+                file <span class="token operator">&lt;&lt;</span> <span class="token string">"Simple world"</span><span class="token punctuation">;</span> <span class="token comment">// Записываем текст в начало файла</span>
+                textFile<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Закрываем файл</span>
+            <span class="token punctuation">}</span>
+         
+            cin<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span> 
+        <span class="token punctuation">}</span></code></pre>
+        <h4>Файлдан деректерді оқу</h4>
+        <p>Деректерді оқу үшін файлды да алдымен ашып, соңында жабу керек. Файлдың мазмұнын оқу үшін <code>ifstream</code> сыныбын пайдаланыңыз:</p><pre class=" language-cpp"><code class="lang  language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream&gt;</span></span>
+        <span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;fstream&gt;</span></span>
+        
+        <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span> 
+        
+        <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment">// здесь будет храниться промежуточный текст,</span>
+            <span class="token comment">// который мы будем считывать из файла</span>
+            <span class="token keyword">char</span> temp<span class="token punctuation">[</span><span class="token number">100</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+            ifstream <span class="token function">some_file</span><span class="token punctuation">(</span><span class="token string">"test.txt"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// открываем файл для чтения</span>
+        
+            <span class="token comment">// считываем лишь первое слово и помещаем в переменную temp</span>
+            some_file <span class="token operator">&gt;&gt;</span> temp<span class="token punctuation">;</span>
+            cout <span class="token operator">&lt;&lt;</span> temp <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span> <span class="token comment">// выводим эту переменную</span>
+        
+            <span class="token comment">// Считываем определенное количество символов - 100</span>
+            <span class="token comment">// и записываем их в нашу переменную</span>
+            some_file<span class="token punctuation">.</span><span class="token function">getline</span><span class="token punctuation">(</span>temp<span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            some_file<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Закрываем файл</span>
+            cout <span class="token operator">&lt;&lt;</span> temp <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span> <span class="token comment">// Отображаем переменную temp</span>
+         
+            cin<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span> 
+        <span class="token punctuation">}</span></code></pre></div>
+	{% endblock %}

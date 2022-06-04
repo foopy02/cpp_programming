@@ -1,0 +1,35 @@
+{% extends 'main/lesson_base.html' %} {% load static %} {% block html_of_lesson %}
+	<div class="main-text">
+        <p>Достық сыныптары дос функцияларына ұқсас жұмыс істейді. Жалғыз ерекшелік - біз тек функцияларды ғана емес, бүкіл сыныптарды біріктіреміз.</p>
+        <p>
+        <br>
+        </p>
+        <p>Dostu қасиетінің арқасында біз бір-бірімен байланысты болатын бірнеше сыныптарды белгілей аламыз. Бұл бір уақытта бірнеше сыныптағы нысан арқылы деректерді алуға мүмкіндік береді.</p>
+        <p>
+        <br>
+        </p>
+        <p>Осыған байланысты біз ойындағы әртүрлі таңбалардың немесе қолданбадағы терезелердің логикасын дәл сипаттай аламыз. Олардың барлығы әртүрлі сыныптарда жазылуы мүмкін, бірақ сонымен бірге әркім бір-біріне қол жеткізе алады.</p>
+        <p>
+        <br>
+        </p>
+		<p>Дос класын құру мысалы:</p><pre class=" language-cpp"><code class="lang  language-cpp"><span class="token keyword">class</span> <span class="token class-name">Auto</span><span class="token punctuation">;</span>
+        <span class="token keyword">class</span> <span class="token class-name">Motorcycle</span> <span class="token punctuation">{</span>
+            <span class="token keyword">friend</span> <span class="token keyword">class</span> <span class="token class-name">Auto</span><span class="token punctuation">;</span>
+        <span class="token keyword">private</span><span class="token operator">:</span> 
+            <span class="token keyword">bool</span> isStillWorking <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+        
+        <span class="token keyword">class</span> <span class="token class-name">Auto</span> <span class="token punctuation">{</span>
+        <span class="token keyword">public</span><span class="token operator">:</span>
+            <span class="token keyword">void</span> <span class="token function">CrashDTP</span><span class="token punctuation">(</span>Auto <span class="token operator">&amp;</span>moto<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                moto<span class="token punctuation">.</span>isStillWorking <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+                cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Motorcycle is currently not working!"</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+		<p>Мысалы дос сыныптары дос функцияларына ұқсас құрылымды пайдаланатынын көрсетеді.</p>
+<p>
+<br>
+</p>
+<p>Мотоцикл сыныбының мәлімдемесі алдында Auto класының бар екендігі көрсетіледі: <code>class Auto</code>. Содан кейін біз Auto класын ыңғайлы етеміз және ол үшін <code>friend</code> кілт сөзін қолданамыз.</p>
+	</div>
+ {% endblock %}

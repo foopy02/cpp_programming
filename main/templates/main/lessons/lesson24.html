@@ -1,0 +1,31 @@
+{% extends 'main/lesson_base.html' %} {% load static %} {% block html_of_lesson %}
+	<div class="main-text">
+        <p>Функция үлгілері, сондай-ақ C++ тіліндегі сынып үлгілері - үлгі құрылымдарын жасауға, содан кейін деректерді беру кезінде мәндерді де, деректер түрлерін де беруге мүмкіндік беретін қуатты технологиялар.</p>
+        <p>
+        <br>
+        </p>
+        <p>Үлгі функциясын жасау үшін <code>template</code> кілт сөзін пайдалану керек және бұрыштық жақшаларда қабылданған деректер түрін көрсету керек. Бір немесе бірнеше деректер түрін қабылдай аласыз.&nbsp;</p>
+        <p>
+        <br>
+        </p>
+        <p>Үлгі функциясын жасау мысалы:</p><pre class=" language-cpp"><code class="lang  language-cpp"><span class="token keyword">template</span> <span class="token operator">&lt;</span><span class="token keyword">typename</span> Type1<span class="token operator">&gt;</span> <span class="token comment">// Указываем что это шаблон функции</span>
+        <span class="token comment">// Принимаем параметр value и его тип данных мы получим</span>
+        <span class="token comment">// также в качестве передаваемого параметра - Type1</span>
+        <span class="token keyword">void</span> funct <span class="token punctuation">(</span>Type1 <span class="token operator">*</span>value<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            cout <span class="token operator">&lt;&lt;</span> value<span class="token punctuation">;</span> <span class="token comment">// Просто выводим это значение</span>
+        <span class="token punctuation">}</span></code></pre>
+		<div>Бірнеше деректер түрін беру үшін келесіні жазыңыз:</div><pre class=" language-cpp"><code class="lang  language-cpp"><span class="token comment">// Здесь мы получаем сразу два типа данных</span>
+        <span class="token keyword">template</span> <span class="token operator">&lt;</span><span class="token keyword">typename</span> Type1<span class="token punctuation">,</span> <span class="token keyword">typename</span> Type2<span class="token operator">&gt;</span>
+        <span class="token keyword">void</span> funct <span class="token punctuation">(</span>Type1 <span class="token operator">*</span>value<span class="token punctuation">,</span> Type2 <span class="token operator">*</span>newValue<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment">// Мы можем использовать передаваемые типы в самой функции</span>
+            Type1 someNew<span class="token punctuation">;</span>
+            cout <span class="token operator">&lt;&lt;</span> newValue<span class="token punctuation">;</span> <span class="token comment">// Просто выводим значение</span>
+        <span class="token punctuation">}</span></code></pre>
+		<div>Үлгі функциясын шақыру үшін келесіні жазыңыз:</div><pre class=" language-cpp"><code class="lang  language-cpp"><span class="token comment">// Вызов функции с одним параметром</span>
+        funct<span class="token operator">&lt;</span><span class="token keyword">double</span><span class="token operator">&gt;</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// Вызов с несколькими параметрами</span>
+        funct<span class="token operator">&lt;</span><span class="token keyword">char</span><span class="token punctuation">,</span> <span class="token keyword">double</span><span class="token operator">&gt;</span><span class="token punctuation">(</span>value<span class="token punctuation">,</span> oneMoreValue<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+        <div class="container d-flex align-items-center justify-content-center">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/podfiRVYjp4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+        {% endblock %}

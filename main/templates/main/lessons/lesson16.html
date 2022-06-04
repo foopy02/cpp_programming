@@ -1,0 +1,34 @@
+{% extends 'main/lesson_base.html' %} {% load static %} {% block html_of_lesson %}
+	<div class="main-text">
+        <p>Әдістің шамадан тыс жүктелуін біз ешқашан қолмен жасамағанымызға қарамастан, бірнеше рет кездестірдік. Оны түзететін уақыт келді.</p>
+        <p>
+        <br>
+        </p>
+        <h4>Әдістің шамадан тыс жүктелуі дегеніміз не?</h4>
+        <p>Әдістердің шамадан тыс жүктелуіне байланысты біз параметрлердің басқа санын немесе басқа деректер түрін қабылдайтын және бір уақытта бірдей атқа ие болатын көптеген әдістерді жасай аламыз.</p>
+        <p>
+        <br>
+        </p>
+        <p>Тамаша мысал - "ранд" функциясы. Біз оған әртүрлі деректер түрлерін жібере аламыз, бірақ функция қатесіз орындалады. Бұл "rand" функциясының әртүрлі деректер түрлері үшін көптеген шамадан тыс жүктелуіне байланысты.&nbsp;</p>
+        <p>
+        <br>
+        </p>
+        <h4>Артық жүктемені қалай жасауға болады?</h4>
+        <p>Артық жүктеуді жасау үшін бірдей атпен әдісті жазу керек, бірақ қабылданған параметрлердің басқа санын немесе қабылданған параметрлер үшін басқа деректер түрлерін көрсету керек.</p>
+        <p>
+        <br>
+        </p>
+        <p>Мысалы:</p><pre class=" language-cpp"><code class="lang  language-cpp"><span class="token keyword">void</span> <span class="token function">getInfo</span><span class="token punctuation">(</span><span class="token keyword">char</span> some<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        cout <span class="token operator">&lt;&lt;</span> some <span class="token operator">&lt;&lt;</span> <span class="token string">"!"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token keyword">int</span> <span class="token function">getInfo</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">,</span> <span class="token keyword">int</span> b<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span></code></pre>
+    <p>Енді әдісті шақырған кезде компилятор қай параметрлер жіберілгенін түсінеді және соған байланысты әртүрлі әдістер шақырылады.</p>
+	</div>
+    <div class="container d-flex align-items-center justify-content-center">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/bE9o9SShctM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    
+            </div>
+{% endblock %}

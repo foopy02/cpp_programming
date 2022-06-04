@@ -1,0 +1,63 @@
+{% extends 'main/lesson_base.html' %} {% load static %} {% block html_of_lesson %}
+	<div class="main-text">
+        <p>Мұрагерлік - OOP негізгі ұғымдарының бірі. Мұрагерлік арқылы бір жалпы сыныпты (ата-аналық сынып) жасауға және негізгі сыныптан барлық өрістерді, әдістерді және конструкторларды иеленетін көптеген басқа сыныптарды (мұра сыныптарын) жасауға болады.</p>
+        <p>
+        <br>
+        </p>
+        <h4>Мұрагерлік не үшін қажет?</h4>
+        <p>Бізде бір үлкен Көлік класы бар делік. Класс барлық көлік құралдарының негізгі сипаттамаларын сипаттайды:</p>
+        <ul>
+        <li>өрістер: жылдамдық, салмақ, қуат қоры және т.б.;</li>
+        <li>әдістер: өрістерден ақпарат алу, жаңа мәндерді орнату;</li>
+        <li>конструктор: бос және барлық өрістерді орнату арқылы.</li>
+        </ul>
+        <p>
+        <br>
+        </p>
+        <p>Сынып негізінде біз жеңіл автокөлік нысанын, жүк көлігі нысанын, ұшақ нысанын және т.б. жасай аламыз. Барлық нысандардың сипаттамалары мен әдістері бірдей болады.&nbsp;</p>
+        <p>
+        <br>
+        </p>
+        <p>Біз көлік пен ұшақ нысанының өрістері мен сипаттамалары әртүрлі болатынын анық түсінеміз. Мұны қалай істеу керек:</p>
+        <ol>
+        <li>Сіз екі бөлек сыныпты жасай аласыз: "Автомобиль" және "Ұшақ". Әрбір сыныпта Transport сыныбынан қайта жазылған барлық әдістер, өрістер және конструкторлар, сонымен қатар белгілі бір сынып үшін ғана маңызды жаңа әдістер болады;</li>
+        <li>Сіз екі бала сыныбын жасай аласыз: "Автомобиль" және "Ұшақ". Екі класс «Транспорт» сыныбынан барлығын мұраға алады және сонымен бірге өздерінің қосымша функцияларын қамтиды. Осылайша, кодтың қайталануы болмайды және код кішірейіп, таза болады.</li>
+        </ol>
+        <p>
+        <br>
+        </p>
+        <h4>Ұрпақ кластарын жасау</h4>
+        <p>Мұрагер класс жасау үшін класс жасап, негізгі сыныптан мұраны көрсету керек.</p>
+        <p>
+        <br>
+        </p>
+        <p>Мұрагер класының мысалы:</p><pre class=" language-cpp"><code class="lang  language-cpp"><span class="token keyword">class</span> <span class="token class-name">Transport</span> <span class="token punctuation">{</span>
+        <span class="token keyword">protected</span><span class="token operator">:</span>
+            <span class="token keyword">float</span> speed<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+        
+        <span class="token keyword">class</span> <span class="token class-name">Auto</span> <span class="token operator">:</span> <span class="token keyword">public</span> Transport <span class="token punctuation">{</span>
+        <span class="token keyword">private</span><span class="token operator">:</span>
+            <span class="token keyword">int</span> wheels<span class="token punctuation">;</span>
+         
+        <span class="token keyword">public</span><span class="token operator">:</span>
+            Auto <span class="token punctuation">(</span><span class="token keyword">float</span> speed<span class="token punctuation">,</span> <span class="token keyword">int</span> wheels<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">this</span><span class="token operator">-</span><span class="token operator">&gt;</span>speed <span class="token operator">=</span> speed<span class="token punctuation">;</span>
+                <span class="token keyword">this</span><span class="token operator">-</span><span class="token operator">&gt;</span>wheels <span class="token operator">=</span> wheels<span class="token punctuation">;</span>
+                cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Speed is: "</span> <span class="token operator">&lt;&lt;</span> speed <span class="token operator">&lt;&lt;</span> <span class="token string">", model is - "</span> <span class="token operator">&lt;&lt;</span> wheels <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+        
+        <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            Auto <span class="token function">bmw</span><span class="token punctuation">(</span><span class="token number">301.2</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            Auto <span class="token function">mercedes</span><span class="token punctuation">(</span><span class="token number">270</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+         
+            <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span></code></pre>
+        <p>Көріп отырғаныңыздай, бізде бір ортақ айнымалы бар, ол жылдамдық. Оның кіру модификаторы қорғалғандықтан, біз Transport сыныбының ішіндегі, сондай-ақ барлық ұрпақ сыныптарының ішіндегі айнымалыға қол жеткізе аламыз.</p>
+		<p>
+			<br>
+		</p>
+        <p>Мұрагерлік жасау үшін біз класс атынан кейін <code>:</code> кілт сөзін жазып, қай сыныптың ата-ана болатынын көрсеттік.</p>
+	</div>
+{% endblock %}

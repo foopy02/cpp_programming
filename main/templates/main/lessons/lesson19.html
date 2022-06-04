@@ -1,0 +1,69 @@
+{% extends 'main/lesson_base.html' %} {% load static %} {% block html_of_lesson %}
+	<div class="main-text">
+		<p>Класс конструкторы өте ыңғайлы және сыртқы түрі қарапайым функцияларға ұқсас. Конструктордың арқасында объект жасалған кезде бірден мәндерді орнатуға болады.</p>
+<p>
+<br>
+</p>
+<p>Конструктордың аты сыныппен бірдей болуы керек. Төменде конструкторды құру мысалы көрсетілген:</p><pre class=" language-cpp"><code class="lang  language-cpp"><span class="token keyword">class</span> <span class="token class-name">Book</span> <span class="token punctuation">{</span>
+        <span class="token keyword">private</span><span class="token operator">:</span>
+            <span class="token keyword">int</span> pages<span class="token punctuation">;</span>
+            <span class="token keyword">float</span> weight<span class="token punctuation">;</span>
+        <span class="token keyword">public</span><span class="token operator">:</span> 
+            <span class="token keyword">char</span> name<span class="token punctuation">;</span>
+        
+            <span class="token keyword">void</span> getInfoBook <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                cout <span class="token operator">&lt;&lt;</span> <span class="token string">"В книге "</span> <span class="token operator">&lt;&lt;</span> name <span class="token operator">&lt;&lt;</span> <span class="token string">" находиться "</span> <span class="token operator">&lt;&lt;</span> pages <span class="token operator">&lt;&lt;</span> <span class="token string">" страниц. "</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+                cout <span class="token operator">&lt;&lt;</span> <span class="token string">"При этом она весит "</span> <span class="token operator">&lt;&lt;</span> weight <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span> 
+         
+            Book <span class="token punctuation">(</span><span class="token keyword">int</span> _pages<span class="token punctuation">,</span> <span class="token keyword">float</span> _weight<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                pages <span class="token operator">=</span> _pages<span class="token punctuation">;</span>
+                weight <span class="token operator">=</span> _weight<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+         
+            Book <span class="token punctuation">(</span><span class="token keyword">int</span> _pages<span class="token punctuation">,</span> <span class="token keyword">float</span> _weight<span class="token punctuation">,</span> <span class="token keyword">char</span> _name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                pages <span class="token operator">=</span> _pages<span class="token punctuation">;</span>
+                weight <span class="token operator">=</span> _weight<span class="token punctuation">;</span>
+                name <span class="token operator">=</span> _name<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+		<p>Бір класта бірден бірнеше конструктор болуы мүмкін. Бірнеше конструкторларды жасау арқылы біз нысанды құру кезінде әртүрлі параметрлер санын бере аламыз.</p>
+<p>
+<br>
+</p>
+<p>Өтілген параметрлерге және олардың деректер түрлеріне байланысты қандай конструкторды пайдалану керектігін компилятор өзі анықтайды.&nbsp;</p>
+<p>
+<br>
+</p>
+<p>Жоғарыдағы кодта айнымалылар <code>private</code> қатынас модификаторымен бірге келеді. Өйткені, барлық айнымалы мәндерді жеке немесе қорғалған етіп жасаған дұрыс. Айнымалыларға тек әдістер мен конструкторлар арқылы қол жеткізу керек. Өрістерге тікелей кіру жабық болуы керек.</p>
+<p>
+<br>
+</p>
+<p>Сонымен қатар, біз екі нысан жасап, ақпаратты көрсетеміз:</p><pre class=" language-cpp"><code class="lang  language-cpp"><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            Book <span class="token function">sherlock_holms</span><span class="token punctuation">(</span><span class="token number">460</span><span class="token punctuation">,</span> <span class="token number">1.7f</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Используем 1 конструктор</span>
+            sherlock_holms<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">'S'</span><span class="token punctuation">;</span> <span class="token comment">// Устанавливаем вручную значение для name</span>
+            sherlock_holms<span class="token punctuation">.</span>getInfoBook <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+         
+            Book <span class="token function">green_mile</span><span class="token punctuation">(</span><span class="token number">750</span><span class="token punctuation">,</span> <span class="token number">2.8f</span><span class="token punctuation">,</span> <span class="token string">'G'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Используем второй конструктор</span>
+            green_mile<span class="token punctuation">.</span>getInfoBook <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+         
+            <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span></code></pre>
+		<p><code>name</code> айнымалысының жалпыға қолжетімді модификаторы болғандықтан, біз оған бөлек сілтеме жасай аламыз. Мұны істемей, оған жеке модификаторды да орнатқан дұрыс.</p>
+		<p>
+			<br>
+		</p>
+		<p>Сондай-ақ конструктор ешбір параметрді қабылдамауы мүмкін. Бұл жағдайда нысанды жасау кезінде қосымша ештеңе жіберудің қажеті жоқ.</p>
+<h4><br></h4>
+<h4>Деструкторлар</h4>
+<div>Деструкторлар конструкторларға қарама-қарсы жұмыс істейді. Конструктор объект жасалғанда, ал жойылған кезде деструктор шақырылады.</div>
+		<div>
+			<br>
+		</div>
+		<div>Деструкторды құру мысалы:</div><pre class=" language-cpp"><code class="lang  language-cpp"><span class="token keyword">class</span> <span class="token class-name">Some</span> <span class="token punctuation">{</span>
+        <span class="token keyword">public</span><span class="token operator">:</span>
+            <span class="token operator">~</span>Some <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Работа с объектом завершена."</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre></div>
+ {% endblock %}
